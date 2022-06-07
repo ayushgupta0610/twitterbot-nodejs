@@ -2,16 +2,13 @@
     "name": "bot",
     "version": "1.0.0",
     "description": "Twitter Bot - NodeJS",
-    "author": "Nishant Srivastava <nisrulz@gmail.com>",
+    "author": "Ayush Gupta",
     "dependencies": {
-        "twit": "*"
+        "dotenv": "^16.0.1",
+        "twitter-api-v2": "^1.12.2"
     },
     "scripts": {
         "start": "node bot.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/nisrulz/twitterbot-nodejs.git"
     },
     "analyze": true,
     "license": "Apache-2.0"
