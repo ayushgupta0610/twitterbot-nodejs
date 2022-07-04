@@ -9,7 +9,7 @@ const twitterClient = new TwitterApi(process.env.BEARER_TOKEN);
 // Tell typescript it's a readonly app
 const T = twitterClient.readOnly;
 // const influencers = ["0x5tryker", "TheGameFiFarm", "kkowll", "playtern", "PlayFutureFund", "wassiecapital", "bottomd0g", "NicoVereecke", "SpeculatorArt", "MyNameIsJeff", "0xPrismatic", "cloudxgmf", "0xAikoDai", "chng_raymond", "0xRyze", "paytkaleiwahea", "p_petertherock", "MapleLeafCap", "PlayVentures", "CryptoMaestro", "retripaladin", "shreyansh_27", "ballmatthew", "KenrickLuneX", "fareastwitcher", "GreatBambin0", "EdC", "henricgames", "Fwiz", "nateliason", "SebPark", "Tocelot", "karipelaaja", "mikojava", "gabusch"];
-const influencers = ["0x5tryker", "TheGameFiFarm", "kkowll", "playtern", "PlayFutureFund"];
+const testInfluencers = ["0x5tryker", "TheGameFiFarm", "kkowll", "playtern", "PlayFutureFund"];
 
 const fetchFollowing = async (user_id) => {
   try {
@@ -20,7 +20,7 @@ const fetchFollowing = async (user_id) => {
   }
 }
 
-const fetchIds = async () => {
+const fetchIds = async (influencers=testInfluencers) => {
   try {
     const response = await T.v2.usersByUsernames(influencers);
     return response?.data;
@@ -58,3 +58,9 @@ fetchIds()
 // ...and then every min after that. Time here is in milliseconds, so
 // 1000 ms = 1 second, 1 sec * 60 = 1 min, 1 min * 60 = 1 hour --> 1000 * 60 * 60
 // setInterval(fetchFollowing, 1000 * 60 * 1)
+
+// module.exports = {
+//   fetchIds,
+//   handleFollowers,
+//   fetchFollowing
+// }

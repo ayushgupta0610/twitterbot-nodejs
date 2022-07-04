@@ -4,11 +4,13 @@
     "description": "Twitter Bot - NodeJS",
     "author": "Ayush Gupta",
     "dependencies": {
+        "cors": "^2.8.5",
         "dotenv": "^16.0.1",
+        "express": "^4.18.1",
         "twitter-api-v2": "^1.12.2"
     },
     "scripts": {
-        "start": "node bot.js"
+        "start": "node server.js"
     },
     "analyze": true,
     "license": "Apache-2.0"
